@@ -30,6 +30,6 @@ if st.button("Prediksi Harga"):
         input_data = np.array([[luas_bangunan, luas_tanah, kamar_tidur, neighborhood_encoded]])
         harga_prediksi = model.predict(input_data)[0]
 
-        st.success(f"💰 Estimasi Harga Properti: Rp {int(harga_prediksi):,}")
+       st.success(f"💰 Estimasi Harga Properti: Rp {int(harga_prediksi):,}".replace(",", ".") + ',000')
     except Exception as e:
         st.error(f"❌ Terjadi kesalahan saat prediksi: {e}")
